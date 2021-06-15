@@ -1,3 +1,5 @@
+import * as THREE from 'three';
+
 class Tableau {
     
     constructor(nbElement, maxValue) {
@@ -24,10 +26,15 @@ class Tableau {
         return this.maxValue;
     }
 
-    drawTable() {
+    getPoints() {
+        let points = [];
+        let xOffset = -100;
         for (let i = 0; i < this.tableau.length; i++) {
-            
+            points.push(new THREE.Vector3(xOffset, -50, 0));
+            points.push(new THREE.Vector3(xOffset, this.tableau[i]-50, 0));
+            xOffset += 1;
         }
+        return points;
     }
 
     // Returns a single rgb color interpolation between given rgb color
