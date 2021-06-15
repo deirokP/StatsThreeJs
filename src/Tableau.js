@@ -3,6 +3,7 @@ class Tableau {
     constructor(nbElement, maxValue) {
         this.minValue = Infinity;
         this.maxValue = 0;
+        this.tableau = [];
         for (let i = 0; i < nbElement; i++) {
             let randomValue = Math.random() * maxValue;
             this.minValue = Math.min(randomValue, this.minValue);

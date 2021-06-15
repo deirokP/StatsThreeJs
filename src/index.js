@@ -3,10 +3,10 @@ import * as THREE from 'three';
 import Tableau from './Tableau.js';
 
 const test = new Tableau(10, 10);
-let tableau = test.getTableau();
+let tableau = test.getTableau;
 console.table(tableau);
-console.log(test.getMin());
-console.log(test.getMax());
+console.log(test.getMin);
+console.log(test.getMax);
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
