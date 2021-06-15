@@ -2,11 +2,12 @@ import './style.css';
 import * as THREE from 'three';
 import Tableau from './Tableau.js';
 
-const test = new Tableau(100, 10);
-const tableau = test.getTableau;
+const instanceTableau = new Tableau(100, 10);
+const { tableau, minValue, maxValue } = instanceTableau;
 
-const min = test.getMin;
-const max = test.getMax;
+console.log(minValue);
+console.log(maxValue);
+console.table(tableau);
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
