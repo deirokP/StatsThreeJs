@@ -26,16 +26,22 @@ class Tableau {
         return this.maxValue;
     }
 
+    tri() {
+        let temp = this.tableau.sort(function (a, b) { return a-b; });
+        this.tableau = temp;
+    }
+    
     getPoints() {
         let points = [];
         let xOffset = -100;
         for (let i = 0; i < this.tableau.length; i++) {
-            points.push(new THREE.Vector3(xOffset, -50, 0));
-            points.push(new THREE.Vector3(xOffset, this.tableau[i]-50, 0));
+            points.push(new THREE.Vector3(xOffset, 0, 0));
+            points.push(new THREE.Vector3(xOffset, this.tableau[i], 0));
             xOffset += 1;
         }
         return points;
     }
+
 
     // Returns a single rgb color interpolation between given rgb color
     // based on the factor given; via https://codepen.io/njmcode/pen/axoyD?editors=0010
